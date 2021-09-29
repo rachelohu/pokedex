@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Pokemon</title>
-</head>
+    <%- include("./partials/head.ejs") %>
 <body>
+    <%- include("./partials/header.ejs") %>
     <h1>New Pokemon</h1>
-            <h2>Name: <%= data.name %></h2>
-            <h2>HP: <%= data.stats.hp %></h2>
-            <h2>Attack: <%= data.stats.attack %></h2>
-            <h2>Defense: <%= data.stats.defense %></h2>
+    <form action="/pokemon" method="POST">
+        <h2><%= data.name %></h2>  
             <ul>
                 <% for(let i = 0; i < data.type.length; i++){ %>
-                    <li>
-                            <h2>Type: <%= data.type[i] %></h2>
-                    </li>             
-                <% } %> 
+            
+                    <h3>Type: <%= data.type[i] %></h3>
+                         
+                <% } %>
+            <h3>HP: <%= data.stats.hp %></h3>
+            <h3>Attack: <%= data.stats.attack %></h3>
+            <h3>Defense: <%= data.stats.defense %></h3>
             </ul>
-            <br><img src="<%= data.img %>" weight= 100px height= 100px></br>
+            <br><img src="<%= data.img %>" alt="Avatar" class="avatar"></br>
     </ul>
+    </form>
+    <br><a href="/pokemon">Back to Pokedex</a></br>
+    <%- include("./partials/footer.ejs") %>    
 </body>
 </html>

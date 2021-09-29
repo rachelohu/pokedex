@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Show</title>
-</head>
+    <%- include("./partials/head.ejs") %>
 <body>
+    <%- include("./partials/header.ejs") %>
     <h1>Pokedex Entry</h1>
-    <h2>Name: <%= data.name %></h2>     
-            <ul>
+    <div class="container">
+    <h3><%= data.name %></h3>
+            Type:
+            <div>
                 <% for(let i = 0; i < data.type.length; i++){ %>
-            
-                    <h3>Type: <%= data.type[i] %></h3>
-                         
+                    <ul><%= data.type[i] %></ul>        
                 <% } %>
-            <h3>HP: <%= data.stats.hp %></h3>
-            <h3>Attack: <%= data.stats.attack %></h3>
-            <h3>Defense: <%= data.stats.defense %></h3>
-            </ul>
-            <br><img src="<%= data.img %>" weight= 100px height= 100px></br>
+            </div>
+            Stats:   
+            <div>
+                <ul>HP: <%= data.stats.hp %></ul>
+                <ul>Attack: <%= data.stats.attack %></ul>    
+                <ul>Defense: <%= data.stats.defense %></ul>    
+            </div>  
+            <br><img src="<%= data.img %>" alt="Avatar" class="avatar"></br>
     </ul>
+    </div>
     <br><a href="/pokemon">Back to Pokedex</a></br>
+    <%- include("./partials/footer.ejs") %>    
 </body>
 </html>

@@ -1,0 +1,20 @@
+.avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+.container {
+  width: 300px;
+  height: 400px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd,
+              -1px -1px 10px #ddd,
+              1px -1px 10px #ddd,
+              -1px 1px 10px #ddd;
+}

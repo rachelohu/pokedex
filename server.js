@@ -3,6 +3,7 @@ const app = express();
 const Pokemon = require('./models/pokemon.js');
 const methodOverride = require('method-Override');
 
+app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 // Index Route
@@ -12,7 +13,7 @@ app.get('/pokemon', (req,res) => {
 
 // New Route
 app.get('/pokemon/new', (req, res) => {
-    res.render('new.ejs', {})
+    res.render('new.ejs', {data: Pokemon});
 });
 
 // Destroy Route
