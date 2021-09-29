@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Show</title>
+</head>
+<body>
+    <h1>Pokemon</h1>
+            <h2>Name: <%= data.name %></h2>
+            <h2>HP: <%= data.stats.hp %></h2>
+            <h2>Attack: <%= data.stats.attack %></h2>
+            <h2>Defense: <%= data.stats.defense %></h2>
+            <ul>
+                <% for(let i = 0; i < data.type.length; i++){ %>
+                    <li>
+                            <h2>Type: <%= data.type[i] %></h2>
+                    </li>             
+                <% } %> 
+            </ul>
+            <br><img src="<%= data.img %>" weight= 400px height= 400px></br>
+    </ul>
+</body>
+</html>
