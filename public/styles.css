@@ -18,3 +18,14 @@
               1px -1px 10px #ddd,
               -1px 1px 10px #ddd;
 }
+
+.box{
+  width: 100px;
+  height: 100px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd,
+              -1px -1px 10px #ddd,
+              1px -1px 10px #ddd,
+              -1px 1px 10px #ddd; 
+}

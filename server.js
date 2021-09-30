@@ -13,29 +13,35 @@ app.get('/pokemon', (req,res) => {
 
 // New Route
 app.get('/pokemon/new', (req, res) => {
-    res.render('new.ejs', {data: Pokemon});
+    res.render('pokemon/new.ejs');
 });
 
 // Destroy Route
-// app.delete('/pokemon/:indexOfPokemonArray', (req, res) => {
-//     data.splice(req.params.indexOfPokemonArray, 1)
-//     res.redirect("/")
-// });
+app.delete('/pokemon/:id', (req, res) => {
+    const id = req.params.id
+    Data.findByIdAndRemove(id, (err, Pokemon)  => {
+        res.redirect("/pokemon")
+    })
+});
 
 // Update Route
-// app.get('/pokemon/new', (req, res) => {
+// app.get('/pokemon/:id', (req, res) => {
+//     const id = req.params.id
+//     Data.findByIdAndUpdate
 //     res.render('new.ejs', {})
 // });
 
 // Create Route
-// app.put('/pokemon/:indexOfPokemonArray', (req, res) => {
+// app.put('/pokemon/:id', (req, res) => {
 //
 
 // Edit Route
-// app.get('/pokemon/:indexOfPokemonArray/edit', (req, res) => {
-//     res.render('edit.ejs', {
-//     Pokemon: })
-// });
+app.get('/pokemon/:id/edit', (req, res) => {
+     const id = req.params.id
+     data.findById(id, (err, Pokemon) => {
+    res.render('edit.ejs', {data: Pokemon[req.params.id]})
+    })
+})
 
 // Show Route
 app.get('/pokemon/:id', (req, res) => {

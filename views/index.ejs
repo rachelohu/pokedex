@@ -4,15 +4,13 @@
 <body>
     <%- include("./partials/header.ejs") %>
     <h1>Pokedex</h1>
-          <ul>
             <% for(let i = 0; i < data.length; i++){ %>
     
                     <a href="/pokemon/<%= i %>">
-                        <img src="<%= data[i].img %>" alt="Avatar" class="avatar">
+                        <div class="box"><img src="<%= data[i].img %>" alt="Avatar" class="avatar"></div>
                     </a>
                          
             <% } %> 
-            </ul>
     <%- include("./partials/footer.ejs") %>
 </body>
 </html>
