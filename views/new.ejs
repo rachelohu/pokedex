@@ -4,24 +4,27 @@
 <body>
     <%- include("./partials/header.ejs") %>
     <h1>Pokedex Entry</h1>
-    <form action="/pokemon" method="post">
-            <h3><%= data.name %></h3>
-            Type:
-            <div>
-                <% for(let i = 0; i < data.type.length; i++){ %>
-                    <ul><%= data.type[i] %></ul>        
-                <% } %>
+    <% for(let i = 0; i < data.length; i++){ %>
+        <form action="/pokemon/new/<%= data[i].id %>" method="get">
+            <div class="container">
+                <h3><%= data[i].name %></h3>
+                Type:
+                <div>
+                    <% for(let j = 0; j < data[i].type.length; j++){ %>
+                        <ul><%= data[i].type[j] %></ul>        
+                    <% } %>
+                </div>
+                Stats:   
+                <div>
+                    <ul>HP: <%= data[i].stats.hp %></ul>
+                    <ul>Attack: <%= data[i].stats.attack %></ul>    
+                    <ul>Defense: <%= data[i].stats.defense %></ul>    
+                </div>  
+                <br><img src="<%= data[i].img %>" alt="Avatar" class="avatar"></br>
+                <input type="submit" value="Add New Pokemon" />
             </div>
-            Stats:   
-            <div>
-                <ul>HP: <%= data.stats.hp %></ul>
-                <ul>Attack: <%= data.stats.attack %></ul>    
-                <ul>Defense: <%= data.stats.defense %></ul>    
-            </div>  
-            <br><img src="<%= data.img %>" alt="Avatar" class="avatar"></br>
-    </ul>
-    <input type="submit" value="Add New Pokemon" />
-    </form>
+        </form>
+    <% } %> 
     </div>
     <br><a href="/pokemon">Back to Pokedex</a></br>
     <%- include("./partials/footer.ejs") %>    
