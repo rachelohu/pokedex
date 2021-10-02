@@ -3,9 +3,19 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/header.ejs") %>
-    <main>
+    <form action="/pokemon/<%= data.id %>?_method=PUT" method="post">      
+      Name: <input type="text" name="name" value="<%= data.name %>"/><br> 
+      Type: <input type="text" name="type" value="<%= data.type %>"/><br>
+      Stats: <input type="number" name="stats" value="<%= data.stats %>"/><br>
+      <input type="submit" value="Update Pokemon"/>
+  </form>
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
+
+    <!-- <main>
         <div>
-          <form action="/pokemon/<%= data._id %>?_method=PUT" method="post">
+          <form action="/pokemon/<%= data.id %>?_method=PUT" method="post">
             <fieldset>
               <legend>Edit a <%= data.name %></legend>
               <label>
@@ -24,11 +34,11 @@
                   placeholder="enter stats"
                 />
               </label>
-            <input type="submit" value="Update <%= data.name %>" />
+            <input type="submit" value="Update Pokemon" />
           </form>
         </div>
       </main>
       <br><a href="/pokemon">Back to Pokedex</a></br>
       <%- include("./partials/footer.ejs") %>  
     </body>
-  </html>
+  </html> -->

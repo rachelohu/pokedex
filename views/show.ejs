@@ -3,25 +3,24 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/header.ejs") %>
-    <h1>Pokedex Entry</h1>
-    <div class="container">
-    <h3><%= data.name %></h3>
-            Type:
-            <div>
-                <% for(let i = 0; i < data.type.length; i++){ %>
-                    <ul><%= data.type[i] %></ul>        
-                <% } %>
-            </div>
-            Stats:   
-            <div>
-                <ul>HP: <%= data.stats.hp %></ul>
-                <ul>Attack: <%= data.stats.attack %></ul>    
-                <ul>Defense: <%= data.stats.defense %></ul>    
-            </div>  
-            <br><img src="<%= data.img %>" alt="Avatar" class="avatar"></br>
-    </ul>
-    </div>
-    <br><a href="/pokemon">Back to Pokedex</a></br>
-    <%- include("./partials/footer.ejs") %>    
+    <h1>Pokedex Show</h1>
+    <a href="/pokemon">Back to Pokedex</a>
 </body>
-</html>
+    <div class="container">
+        <h3><%= data.name %></h3>
+        Type:
+        <div>
+            <% for(let i = 0; i < data.type.length; i++){ %>
+                <ul><%= data[i].type %></ul>        
+            <% } %>
+        </div>
+        Stats:
+        <div>
+            <ul>HP: <%= data.stats.hp %></ul>
+            <ul>Attack: <%= data.stats.attack %></ul>    
+            <ul>Defense: <%= data.stats.defense %></ul>  
+        </div>
+        <br><img src="<%= data.img %>" alt="Avatar" class="avatar"></br>
+   <%- include("./partials/footer.ejs") %>
+</body>
+</html> 
