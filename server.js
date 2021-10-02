@@ -17,7 +17,6 @@ app.get('/pokemon/new', (req, res) => {
     res.render('new.ejs', {title: "Pokemon - New Page"});
 });
 
-
 // Delete Route
 app.delete('/pokemon/:id', (req, res) => {
     pokemon.splice(req.params.id, 1)
@@ -27,7 +26,7 @@ app.delete('/pokemon/:id', (req, res) => {
 // Update Route
 app.put('/pokemon/:id', (req, res) => {
     pokemon[req.params.id] = req.params.id
-    res.render('/pokemon')
+    res.redirect("/pokemon")
 });
 
 //Create Route
@@ -38,7 +37,7 @@ app.post('/pokemon', (req, res) => {
 
 // Edit Route
 app.get('/pokemon/:id/edit', (req, res) => {
-    res.render('edit.ejs', {data: pokemon[req.params.id], title: "Pokemon - Edit Page"})
+    res.render('edit.ejs', {data: pokemon[req.params.id], title: "Pokemon - Edit Page"});
 });
 
 // Show Route
